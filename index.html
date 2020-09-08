@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            
+            
+            background: url('weight.jpg') no-repeat center center/cover;
+            
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+    <title>WEIGHT CONVERTOR</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mt-5 mb-5">WEIGHT CONVERTOR</h1>
+                <form>
+                    <div class="from-group">
+                        <input id="lbsinput" type="number" class="form-control form-control-lg mb-3"
+                            placeholder="ENTER POUNDS...">
+                    </div>
+                </form>
+                <div>
+                    <div class="card bg-dark text-white border-light mb-5">
+                        <div class="card-block">
+                            <h4>GRAMS:</h4>
+                            <div id="gramsoutput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-dark text-white border-light mb-5">
+                        <div class="card-block">
+                            <h4>KILOGRAMS:</h4>
+                            <div id="kilogramoutput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-dark text-white border-light mb-5">
+                        <div class="card-block">
+                            <h4>OUNCES:</h4>
+                            <div id="ouncesoutput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-dark text-white border-light mb-5">
+                        <div class="card-block">
+                            <h4>STONES:</h4>
+                            <div id="stonesoutput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.getElementById('lbsinput').addEventListener('input', function (e) {
+            let lbs = e.target.value;
+            document.getElementById('gramsoutput').innerHTML = lbs / 0.0022046;
+            document.getElementById('kilogramoutput').innerHTML = lbs / 2.2046;
+            document.getElementById('ouncesoutput').innerHTML = lbs * 16;
+            document.getElementById('stonesoutput').innerHTML = lbs * 0.071429;
+        });
+    </script>
+</body>
+
+</html>
